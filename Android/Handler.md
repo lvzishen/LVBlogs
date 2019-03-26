@@ -13,7 +13,8 @@
 - 11.同步屏障
 
 先来一个自己画的Handler机制整体流程图，`本文不会带着你走一遍源码，只会对重点需要注意的地方以及一些细节的处理做出解释，让你更好的了解Handler机制整体的运作`。
-![在这里插入图片描述](https://user-gold-cdn.xitu.io/2019/3/12/1697248a05a2d88a?w=1097&h=744&f=png&s=102812)
+![Alt text](./1553602631972.png)
+
 
  - Handler通过sendMessage()发送Message到MessageQueue队列；
   -  Looper通过loop()，不断提取出达到触发条件的Message，并将Message交给target来处理； 
@@ -258,7 +259,7 @@ boolean enqueueMessage(Message msg, long when) {
 ```
 ### MessageQueue的机制
 
--  `Message的入列和出列其实是一个很典型的**生产者-消费者模型**,其中使用了epoll机制，当没有消息的时候会进行阻塞释放CPU时间片避免死循环造成性能的浪费。`虽然是不断循环取出头结点的Message进行分发处理但是`如果没有消息时它是阻塞在 nativePollOnce这个native方法中的`，`当我们enqueue插入Message时会触发nativeWake这个方法去唤醒`,从而nativePollOnce阻塞解除继续遍历MessageQueue取出头结点去处理。
+-  `Message的入列和出列其实是一个很典型的生产者-消费者模型,其中使用了epoll机制，当没有消息的时候会进行阻塞释放CPU时间片避免死循环造成性能的浪费。`虽然是不断循环取出头结点的Message进行分发处理但是`如果没有消息时它是阻塞在 nativePollOnce这个native方法中的`，`当我们enqueue插入Message时会触发nativeWake这个方法去唤醒`,从而nativePollOnce阻塞解除继续遍历MessageQueue取出头结点去处理。
 - Looper.loop()在一个线程中调用next()不断的取出消息，另外一个线程则通过enqueueMessage向队列中插入消息，`所以在这两个方法中使用了synchronized (this) {}同步机制，其中this为MessageQueue对象，不管在哪个线程，这个对象都是同一个`，因为Handler中的mQueue指向的是Looper中的mQueue，这样防止了多个线程对同一个队列的同时操作(如增加的同时正在轮询获取Message，有可能造成MessageQueue中最终结果的不确定性)。
 
 ```
