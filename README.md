@@ -8,4 +8,4 @@
 ## Android
 ### [Handler难点攻克](https://github.com/lvzishen/LVBlogs/blob/master/Android/Handler.md)
 ### [Android动画](https://github.com/lvzishen/LVBlogs/blob/master/Android%E5%8A%A8%E7%94%BB.md)
-### [View相关](https://github.com/lvzishen/LVBlogs/blob/master/View%E7%9B%B8%E5%85%B3%E7%9F%A5%E8%AF%86%E7%82%B9.md)
+### [View相关](https://github.com/lvzishen/LVBlogs/blob/master/View%E7%9B%B8%E5%85%B3.md)
