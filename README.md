@@ -9,3 +9,4 @@
 ### [Handler难点攻克](https://github.com/lvzishen/LVBlogs/blob/master/Android/Handler.md)
 ### [Android动画](https://github.com/lvzishen/LVBlogs/blob/master/Android%E5%8A%A8%E7%94%BB.md)
 ### [View相关](https://github.com/lvzishen/LVBlogs/blob/master/View%E7%9B%B8%E5%85%B3.md)
+### [事件分发机制](https://github.com/lvzishen/LVBlogs/blob/master/%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91.md)
