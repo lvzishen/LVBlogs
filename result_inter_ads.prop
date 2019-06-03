@@ -1,0 +1,16 @@
+switch_banner_inter_result_antivirus=0
+switch_banner_inter_result_fullscan=0
+switch_banner_inter_result_junkfile=0
+switch_banner_inter_result_turbojunkfile=0
+switch_banner_inter_result_batterysave=0
+switch_banner_inter_result_boostmemory=0
+switch_banner_inter_result_phone=1
+switch_banner_inter_result_discharge=0
+switch_banner_inter_result_ncboost=1
+switch_banner_inter_result_ns=-1
+switch_banner_inter_result_nc=-1
+switch_banner_inter_result_nh=-1
+switch_banner_inter_result_wifi=0
+switch_banner_inter_result_cpucooler=1
+switch_banner_inter_result_onetap=0
+switch_banner_inter_result_batterysave=0
